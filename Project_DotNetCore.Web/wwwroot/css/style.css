@@ -1,0 +1,911 @@
+/********style******/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px !important;
+    overflow-x: hidden;
+}
+/*.select2-container {
+    width: 100% !important;
+}*/
+.select2 {
+    width: 100% !important;
+}
+/*#tblProjectPublishRequestInfo_wrapper table.table-bordered.dataTable th:first-child, table.table-bordered.dataTable th:first-child, table.table-bordered.dataTable td:first-child, table.table-bordered.dataTable td:first-child {
+    min-width: 100px !important;
+}*/
+
+.asterisk {
+    color: #dc3545 !important;
+}
+
+/*.content .container-fluid .card {
+    margin-top:10px !important;
+}*/
+input {
+    margin-bottom: 1rem;
+}
+
+.table thead th {
+    text-transform: capitalize !important;
+}
+
+.btn {
+    border-radius: 20px !important;
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: 500 !important;
+}
+
+.f14 {
+    font-size: 14px !important;
+}
+
+.login_bg {
+    background-image: url(../img/bg-01.jpg);
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-box, .register-box {
+    width: 500px !important;
+}
+
+    .login-box .card, .register-box .card {
+        padding: 50px !important;
+        border-radius: 10px !important;
+    }
+
+.login-logo, .register-logo {
+    font-size: 1.5rem !important;
+}
+
+/***********/
+/* ---- reset ---- */ body {
+    margin: 0;
+    font: normal 75% Arial, Helvetica, sans-serif;
+}
+
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+/* ---- particles.js container ---- */
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+/* ---- stats.js ---- */
+
+.count-particles {
+    background: #000022;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 80px;
+    color: #13E8E9;
+    font-size: .8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.js-count-particles {
+    font-size: 1.1em;
+}
+
+#stats, .count-particles {
+    -webkit-user-select: none;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+#stats {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+
+.count-particles {
+    border-radius: 0 0 3px 3px;
+}
+
+.login-box, .register-box {
+    width: 500px !important;
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: min-content;
+}
+
+@media (max-width: 700px) {
+    .login-box, .register-box {
+        margin-top: .5rem;
+        width: 90% !important;
+    }
+
+    .login-box, .register-box {
+        width: 360px;
+        margin: 7% auto;
+    }
+
+        .login-box .card, .register-box .card {
+            padding: 20px !important;
+            border-radius: 10px !important;
+        }
+
+    .login-card-body, .register-card-body {
+        padding: 10px !important;
+    }
+}
+
+.btn {
+    border-radius: 10px !important;
+}
+
+.rounded-0 {
+    border-radius: 0px !important;
+}
+
+.w-contect {
+    width: max-content !important;
+}
+
+.border-gray {
+    border: 1px solid #ced4da !important;
+}
+
+.select2 {
+    font-size: 1rem !important;
+}
+
+.dt-buttons .btn {
+    border-radius: 0px !important;
+}
+
+.loader {
+    z-index: 10000000 !important;
+}
+
+.loader {
+    background-color: white;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    position: fixed;
+    /* background: url(/Content/css/1Content/images/page-loader.gif) 50% 50% no-repeat rgb(249,249,249); */
+    background-size: 1000px 1000px;
+}
+
+.overlay > .fa {
+    position: absolute;
+    top: 42% !important;
+    left: 49% !important;
+    font-size: 60px !important;
+    color: #4451a2 !important;
+}
+
+
+
+div.dataTables_wrapper div.dataTables_filter input {
+    margin-left: 0 !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered .select2-search.select2-search--inline .select2-search__field {
+    margin-top: 0px !important;
+}
+
+.select2 input {
+    margin-bottom: 0rem !important;
+}
+
+.loader1 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    border: 1px solid #e9e9e9;
+}
+
+.loader_ajax_small {
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    border: 2px solid #f3f3f3 !important;
+    border-radius: 50%;
+    border-top: 2px solid #2D2D2D !important;
+    width: 29px;
+    height: 29px;
+    margin: 0 auto;
+    -webkit-animation: spin_loader_ajax_small 2s linear infinite;
+    animation: spin_loader_ajax_small 2s linear infinite;
+}
+
+@-webkit-keyframes spin_loader_ajax_small {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin_loader_ajax_small {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/*.loader1 .overlay > .fa {
+    position: absolute;
+    top: 42% !important;
+    left: 41% !important;
+    font-size: 60px !important;
+    color: #0062cc !important;
+}*/
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+    white-space: break-spaces !important;
+}
+
+.overlay > .fa {
+    position: absolute;
+    top: 42% !important;
+    /*    / left: 43% !important;*/
+    font-size: 60px !important;
+    color: #4451a2 !important;
+    margin: auto;
+    left: 0 !important;
+    right: 0 !important;
+    width: 60px !important;
+}
+
+.loader1 .overlay > .fa {
+    position: absolute;
+    top: 42% !important;
+    /*    / left: 43% !important;*/
+    font-size: 60px !important;
+    color: #0062cc !important;
+    margin: auto;
+    left: 0 !important;
+    right: 0 !important;
+    width: 60px !important;
+}
+
+.fa-2x-1 {
+    font-size: 1.5em !important;
+}
+
+/*.navbar .nav-item .nav-link {
+    font-size:1.5rem !important;
+}*/
+.navbar .nav-item .nav-link img {
+    width: 1.5rem !important;
+}
+
+.content-wrapper {
+    margin-left: 0px !important;
+}
+
+.main-header {
+    margin-left: 0px !important;
+}
+
+.main-header {
+    box-shadow: 0 0 28px 0 rgb(85 91 97 / 13%);
+}
+
+.navbar .nav-item .nav-link {
+    font-size: 18px;
+}
+
+.navbar .nav-item .nav-link {
+    color: white !important;
+}
+
+.navbar .navbar-brand {
+    /* width: 75px !important;*/
+    background: white;
+    color: black;
+    text-align: center;
+    font-size: 25px !important;
+    padding: 10px;
+}
+
+
+.navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
+    color: #343a40 !important;
+}
+
+
+
+.navbar .nav-item .nav-link {
+    font-size: 14px !important;
+}
+
+.nav-item .dropdown-item {
+    font-size: 14px;
+}
+
+.p10r select {
+    padding: 10px !important;
+    border-radius: 4px !important;
+}
+
+.bg-hitech {
+    background: #4451a2 !important;
+}
+/*.card-body .fa-info-circle {
+    display:none !important;
+}*/
+.btn-primary {
+    background-color: #4451a2 !important;
+    border-color: #4451a2 !important;
+}
+
+.page-item.active .page-link {
+    background-color: #4451a2 !important;
+    border-color: #4451a2 !important;
+}
+
+.page-link {
+    color: #4451a2 !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: white !important;
+    background-color: #4451a2 !important;
+}
+
+.page-item.active .page-link {
+    color: #fff !important;
+}
+
+.applyCommonRedBorder {
+    border: 1px solid red !important;
+}
+
+.navbar-dark .dropdown-submenu .nav-link {
+    color: #212529 !important;
+}
+
+.wPaint-menu-holder {
+    top: -20px;
+    left: 40px;
+}
+
+.wpaintposition .wPaint-menu {
+    right: 0 !important;
+    left: unset !important;
+}
+
+.wpaintposition .wPaint-menu-holder {
+    left: unset !important;
+    right: 10px;
+}
+
+.select2 {
+    font-size: 12px !important;
+}
+
+.small-box1 {
+    border-radius: 0.25rem;
+    box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
+    display: block;
+    padding: 40px;
+    position: relative;
+    margin-bottom: 15px !important;
+}
+
+
+.bg-white {
+    background-color: #fff;
+    color: #1f2d3d !important;
+}
+
+.bg-white {
+    background-color: #fff !important;
+}
+
+.project-flex {
+    display: flex;
+    align-items: center;
+}
+
+.badgepill {
+    font-size: 20px;
+}
+
+.datecalender {
+    text-align: end;
+}
+
+.badgespace {
+    margin: 2px;
+}
+
+.ststuscolor {
+    background: #8210b8 !important;
+}
+
+.cardsize p {
+    font-size: 22px;
+}
+
+.cradsize h2 {
+    font-size: 30px;
+}
+
+.f22 {
+    font-size: 19px !important;
+}
+
+.f1rem {
+    font-size: 19px !important;
+}
+
+.pdcard10 .card .card-body h3 {
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+}
+
+.pdcard10 .card .card-body {
+    padding: 10px !important;
+}
+
+.textsite {
+    color: #4451a2 !important
+}
+
+.table thead th {
+    white-space: nowrap !important;
+    color: black !important;
+    font-weight: 400 !important;
+}
+
+.table td, .table th {
+    padding: .40rem !important;
+}
+
+table.dataTable > thead > tr > th:not(.sorting_disabled), table.dataTable > thead > tr > td:not(.sorting_disabled) {
+    padding-right: 23px !important;
+}
+
+table.dataTable > thead .sorting_asc:before, table.dataTable > thead .sorting_desc:after {
+    opacity: 1 !important;
+    color: #3384c5 !important;
+}
+
+table.dataTable > thead .sorting_asc:before, table.dataTable > thead .sorting_desc:after {
+    opacity: 1 !important;
+    color: #3384c5 !important;
+}
+
+.btn-group-sm > .btn, .btn-sm {
+    font-size: 12px !important;
+}
+
+table.dataTable > thead .sorting:before, table.dataTable > thead .sorting:after, table.dataTable > thead .sorting_asc:before, table.dataTable > thead .sorting_asc:after, table.dataTable > thead .sorting_desc:before, table.dataTable > thead .sorting_desc:after, table.dataTable > thead .sorting_asc_disabled:before, table.dataTable > thead .sorting_asc_disabled:after, table.dataTable > thead .sorting_desc_disabled:before, table.dataTable > thead .sorting_desc_disabled:after {
+    opacity: .7 !important;
+}
+
+.form-control {
+    font-size: 12px !important;
+    height: calc(1.75rem + 2px) !important;
+}
+
+.select2-container--default .select2-selection--single {
+    padding: .3rem 0.3rem !important;
+    height: calc(1.75rem + 2px) !important;
+}
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        margin-top: -5px !important;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 28px !important;
+    }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow b {
+            margin-top: -2px !important;
+        }
+
+
+#tblProjectMaster tbody tr td:first-child {
+    white-space: nowrap !important;
+}
+
+.w-85 {
+    width: 85% !important;
+}
+
+.w-15 {
+    width: 15% !important;
+}
+
+/***************Drag and drop*********************/
+
+.dragdrop #modules {
+    padding: 20px;
+    background: #eee;
+    margin-bottom: 20px;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.dragdrop #dropzone {
+    padding: 20px;
+    background: #eee;
+    min-height: 100px;
+    margin-bottom: 20px;
+    z-index: 0;
+    background-color: rgba(255,255,255,.25);
+}
+
+.dragdrop .active {
+    outline: 1px solid red;
+}
+
+.dragdrop .hover {
+    outline: 1px solid blue;
+}
+
+.dragdrop .drop-item {
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
+
+    .dragdrop .drop-item .remove {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+    }
+
+.dragdrop .remove {
+    border-radius: 0px !important;
+    padding: 0px 6px;
+}
+
+    .dragdrop .remove .fa {
+        color: red !important;
+    }
+
+    .dragdrop .remove:hover .fa {
+        color: #fff !important;
+    }
+
+    .dragdrop .remove:hover {
+        background: red !important;
+    }
+
+#modules {
+    min-height: 38em;
+    overflow-y: auto;
+}
+
+.min38 {
+    min-height: 38em;
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 3px dashed #ccc;
+}
+/*.dragdrop #dropzone {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);*/
+/* margin-right: calc(var(--bs-gutter-x) * -.5);
+    margin-left: calc(var(--bs-gutter-x) * -.5);*/
+/*padding: 5px 10px;
+    border-radius: 10px;
+    border: 3px dashed #ccc;
+}*/
+
+/*@media (min-width: 576px) {
+    .dragdrop .drop-item {
+        -ms-flex: 0 0 32%;
+        flex: 0 0 32%;
+        max-width: 32%;
+        margin-left:7.5px;
+    }
+}*/
+.dragdrop #dropzone {
+    padding: 10px;
+}
+
+.dragdrop .formbuilder {
+    padding: 10px;
+}
+
+.drop-item details {
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid rgb(204, 204, 204);
+}
+
+summary {
+    margin-bottom: 5px !important;
+}
+
+#dropzone .ui-sortable-handle .row {
+    background-color: rgb(249 249 249);
+}
+
+.dragdrop #dropzone {
+    border: 4px dotted lightgray;
+}
+
+.bg_theme_accodiyan .panel-heading {
+    background: #4451a2 !important;
+    padding: 8px !important;
+}
+
+.bg_theme_accodiyan .panel-title a {
+    color: #fff !important;
+    font-size: 14px !important;
+}
+
+.short-full {
+    background-color: #fff !important;
+    color: #4451a2 !important;
+    padding: 4px 6px;
+    border-radius: 4px !important;
+}
+
+#tblNewBatchBatchMaster thead th:first-child {
+    min-width: 100px !important;
+}
+
+.batchplannerstepname {
+    background-color: #04AA6D !important;
+    color: white !important;
+    padding: 8px !important;
+    font-size: 16px !important;
+    font-family: Arial !important;
+}
+
+.batchplannertask {
+    background-color: dimgray !important;
+    color: white !important;
+    padding: 8px !important;
+    font-size: 16px !important;
+    font-family: Arial !important;
+}
+
+.unAssignedVolume {
+    background-color: darkorange !important;
+    color: white !important;
+    padding: 8px !important;
+    font-size: 16px !important;
+    font-family: Arial !important;
+}
+
+.unAssignedVolumeval {
+    background-color: darkorange !important;
+    color: white !important;
+    padding: 8px !important;
+    font-size: 16px !important;
+    font-family: Arial !important;
+}
+
+.form-inline {
+    display: block !important;
+}
+
+.btn-primary.active, .btn-primary:active, .open > .dropdown-toggle.btn-primary {
+    color: #fff !important;
+    background-color: #337ab7 !important;
+    border-color: #337ab7 !important;
+}
+
+.classificationname {
+    background-color: darkcyan !important;
+    color: white !important;
+    padding: 8px !important;
+    font-size: 16px !important;
+    font-family: Arial !important;
+}
+
+element.style {
+    width: 105.6px;
+}
+
+table.dataTable > thead > tr > th:not(.sorting_disabled), table.dataTable > thead > tr > td:not(.sorting_disabled) {
+    padding-right: 44px !important;
+}
+
+.checks-error {
+    max-height: 76px;
+    overflow: auto;
+    font-size: 13px;
+}
+
+.callout-info {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.DangerColor {
+    color: red;
+}
+
+.callout.callout-info {
+    border-left-color: red !important;
+}
+
+.checksFailed {
+    padding-right: 7.5px !important;
+    padding-left: 7.5px !important;
+}
+.DisplayFlex {
+    display:flex;
+    justify-content:end;
+
+}
+.min__width {
+    min-width: max-content !important;
+}
+.min__width button:hover{
+    background-color: #1e7e34 !important;
+    color:white !important;
+    border-radius:0px !important;
+}
+.Margin__right {
+    margin-right:8px !important;
+}
+.MarginLeft{
+    margin-left:10px !important;
+    margin-bottom:0px !important;
+    margin-top:10px !important;
+}
+
+.closeAlertify {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    display: block;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 100%;
+    background: -webkit-linear-gradient(-45deg, transparent 0%, transparent 46%, white 46%, white 56%,transparent 56%, transparent 100%), -webkit-linear-gradient(45deg, transparent 0%, transparent 46%, white 46%, white 56%,transparent 56%, transparent 100%);
+    background-color: black;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+}
+
+.alertify-error > div {
+    overflow: visible;
+}
+#tblProjectsReport > thead > tr > th {
+    background-color: #4451a2 !important;
+    color: white !important;
+}
+#LoadReportsTabData .card-link {
+    background-color: #4451a2 !important;
+    height: auto !important;
+    color: white !important;
+    margin-left: 20px !important;
+    padding: 3px 5px !important;
+    position: absolute !important;
+    margin-top: -13px !important;
+    border: 2px solid var(--main-bg-color) !important;
+    border-radius: 3px !important;
+}
+body .box.box-primary.with-border {
+    border: 1px solid #4451a2 !important;
+}
+#tblProjectsReport_filter{
+    display:none !important;
+}
+#tblProjectsReport_length {
+    float: right !important;
+}
+.absulate {
+    position: absolute !important;
+}
+.dt-button-collection .dropdown-menu a {
+    font-size: 13px !important;
+}
+
+#tblDispatchedBatchMaster tbody tr td:first-child {
+    display: inline-flex !important;
+}
+
+#tblCompletedBatchMaster tbody tr td:first-child {
+    display: inline-flex !important;
+}
+#tblBatchStatusReport_filter {
+    display: none !important;
+}
+#tblBatchStatusReport_length {
+    float: right !important;
+}
+#tblTrackingReport_filter {
+    display: none !important;
+}
+#tblTrackingReport_length {
+    float: right !important;
+}
+.zindex{
+    z-index:10000 !important;
+}
+
+.nav-item .dropdown-item {
+    font-size:13px !important;
+}
+.fontsize13 a {
+    font-size:13px !important;
+}
+.dflex{
+    display:flex !important;
+    align-items:center !important;
+}
+ div.table-responsive > div.dataTables_wrapper > div.row {
+    display: flex !important;
+    align-items: center !important;
+}
+#tblProgressBatchMaster tr td:first-child {
+   display:flex !important;
+}
+@media (min-width: 576px) {
+    .col-sm-1_5 {
+        -ms-flex: 0 0 13.33%;
+        flex: 0 0 13.33%;
+        max-width: 13.33%;
+    }
+}
+.col-sm-1_5 {
+    position: relative;
+    width: 100%;
+    padding-right: 7.5px;
+    padding-left: 7.5px;
+}
+#tblTrackingReport > thead > tr > th {
+    background-color: #4451a2 !important;
+    color: white !important;
+}
+#tblBatchStatusReport > thead > tr > th {
+    background-color: #4451a2 !important;
+    color: white !important;
+}

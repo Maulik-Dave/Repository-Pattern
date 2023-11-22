@@ -1,0 +1,193 @@
+﻿@model Project_DotNetCore.Base.Modules.AdminUsers.Models.DTOs.DesignationMasterManageDto
+
+@{
+    ViewData["Title"] = "Designation";
+}
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Designation</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Home</a></li>
+                    <li class="breadcrumb-item active">
+                        @if (Model.Id > 0)
+                        {
+                            <text>Edit</text>
+                        }
+                        else
+                        {
+                            <text>Add</text>
+                        }
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            @if (Model.Id > 0)
+                            {
+                                <text>Edit</text>
+                            }
+                            else
+                            {
+                                <text>Add</text>
+                            }
+                        </h3>
+                    </div>
+
+                    @using (Html.BeginForm("Manage", "DesignationMaster", FormMethod.Post, new { @id = "frmDesignationMaster" }))
+                    {
+                        @Html.HiddenFor(model => model.Id)
+                        @Html.HiddenFor(model => model.CreatedBy)
+                        @Html.HiddenFor(model => model.CreatedAt)
+                        @Html.HiddenFor(model => model.IsActive)
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    @Html.LabelFor(model => model.Designation, htmlAttributes: new { @class = "" })<span class="asterisk">*</span>
+                                    @Html.EditorFor(m => m.Designation, new { htmlAttributes = new { @class = "form-control", @id = "Designation", placeholder = "Designation Name" } })
+                                    @Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-sm-3">
+                                    @Html.LabelFor(model => model.Level, htmlAttributes: new { @class = "" })<span class="asterisk">*</span>
+                                    @Html.EditorFor(m => m.Level, new { htmlAttributes = new { @class = "form-control", @id = "Level", placeholder = "Level" ,type="number",@min = "0" } })
+                                    @Html.ValidationMessageFor(model => model.Level, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            @*   <button type="button" name="Save" class="btn btn-success float-right btn-sm SaveDesignationMaster ml-2" data-toggle="tooltip" data-placement="right" title="Save Designation">Save</button>
+                        <button type="button" name="SaveAndAddMore" class="btn btn-primary float-right btn-sm SaveDesignationMaster" data-toggle="tooltip" data-placement="right" title="Save & Add More">Save & Add More</button>*@
+                            <div class="DisplayFlex">
+                                <div class="dropup open">
+                                    @if (Model.Id > 0)
+                                    {
+                                        <button class="btn btn-sm btn-success btn-success-bottom-border Margin__right SaveDesignationMaster" title="Update Designation" type="button" aria-haspopup="true" aria-expanded="true">
+                                            Update Designation
+                                            <span class="caret"></span>
+                                        </button>
+                                    }
+                                    else
+                                    {
+                                        <button class="btn btn-sm btn-success btn-success-bottom-border Margin__right dropdown-toggle" title="Save Designation" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Save Designation
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu min__width">
+                                            <li>
+                                                <button type="button" name="Save" class="btn  btn-sm SaveDesignationMaster" data-toggle="tooltip" data-placement="right" title="Save Designation">Save & Go to List of Designation</button>
+                                            </li>
+
+                                            <li>
+                                                <button type="button" name="SaveAndAddMore" class="btn  btn-sm SaveDesignationMaster" data-toggle="tooltip" data-placement="right" title="Save & Add More">Save & Add More Designation</button>
+                                            </li>
+                                        </ul>
+                                    }
+                                </div>
+                                <div class="">
+                                    <a href="@Url.Action("Index","DesignationMaster")" class="btn btn-primary mb-2 float-right btn-sm" data-toggle="tooltip" data-placement="right" title="Back to Designation List">Go to List of Designation</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    var options = { showActionButtons: false };
+    var formBuilder;
+    var fbEditor = document.getElementById('fb-editor');
+
+    $(document).ready(function () {
+    });
+
+    $(document).undelegate('.SaveDesignationMaster', "click").delegate(".SaveDesignationMaster", "click", function (e) {
+        e.preventDefault();
+
+        var isformvalid = true;
+        var getbtn_name = $(this).attr("name");
+        var designation = $("#Designation").val();
+        var level = $("#Level").val();
+
+        if (designation == null || designation == "" || designation == undefined) {
+            errorAlert("Please Enter Designation");
+            return false;
+        }
+        else if (level == null || level == "" || level == undefined) {
+            errorAlert("Please Enter Level");
+            return false;
+        }
+        $('#frmDesignationMaster').each(function () {
+            if (!isDesignationMasterFormValid($(this))) {
+                isformvalid = false;
+            }
+        });
+        if (!isformvalid) {
+            return false;
+        }
+
+        var formdata = new FormData($('#frmDesignationMaster')[0]);
+        formdata.append($(this).attr("name"), $(this).attr("name"));
+
+        $.ajax({
+            url: '@Url.Action("Manage", "DesignationMaster")',
+            processData: false,
+            contentType: false,
+            type: "POST",
+            data: formdata,
+            success: function (data, status, xhr) {
+                if (data.result == "Success") {
+                    alertify.success(data.value);
+                    if (getbtn_name == "Save") {
+                        window.location.href = '@Url.Action("Index", "DesignationMaster")';
+                    }
+                    else if (@Model.Id> 0) {
+                        window.location.href = '@Url.Action("Index", "DesignationMaster")';
+                    }
+                    else {
+                        window.location.href = '@Url.Action("Manage", "DesignationMaster")';
+                    }
+                }
+                else {
+                    errorAlert(data.value);
+                }
+            }
+        });
+
+    });
+
+    $("#Level").on("input", function (evt) {
+        var self = $(this);
+        self.val(self.val().replace(/\D/g, ""));
+        if ((evt.which < 48 || evt.which > 57)) {
+            evt.preventDefault();
+        }
+    });
+
+    function isDesignationMasterFormValid(formname) {
+        $.validator.unobtrusive.parse(formname);
+        var isvalidate = $(formname).validate().form();
+        if (isvalidate) {
+            return true;
+        }
+        return false;
+    }
+
+</script>

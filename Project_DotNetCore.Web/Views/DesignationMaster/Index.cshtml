@@ -1,0 +1,152 @@
+﻿@model IEnumerable<Project_DotNetCore.Base.Modules.AdminUsers.Models.DTOs.DesignationMasterListDto>
+@{
+    ViewData["Title"] = "Designation";
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Designation</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Home</a></li>
+                    <li class="breadcrumb-item active">List</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <a href="@Url.Action("Manage","DesignationMaster")" class="btn btn-primary float-right mb-2 btn-sm" data-toggle="tooltip" data-placement="right" title="Add New Designation">Add</a>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Designation List</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="tblDesignationMaster" class="table table-bordered table-hover w-100">
+                                @* <thead>
+                                <tr>
+                                <th>Action</th>
+                                <th>Id</th>
+                                <th>Designation</th>
+                                <th>Level</th>
+                                <th>Is Active</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @if (Model != null && Model.Count() > 0)
+                                {
+                                foreach (var item in Model)
+                                {
+                                <tr>
+                                <td>
+                                <a href="@Url.Action("Manage","DesignationMaster",new {id = item.Id})" class="btn btn-primary btn-sm mb-1" title="Edit">
+                                <i class="fa  fa-edit" aria-hidden="true"></i>
+                                </a>
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Designation)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Level)</td>
+                                <td>
+                                @{
+                                @if (item.IsActive == true)
+                                {
+
+                                <a href="@Url.Action("Delete","DesignationMaster", new{Id = item.Id, isActive=item.IsActive==true ? false : true})" class="btn btn-success float-right mb-2 btn-sm" id="Active">Active</a>
+                                }
+                                else
+                                {
+                                <a href="@Url.Action("Delete","DesignationMaster", new{Id = item.Id, isActive=item.IsActive==true ? false : true})" class="btn btn-primary float-right mb-2 btn-sm" id="Inactive">InActive</a>
+                                }
+                                }
+                                </td>
+                                </tr>
+                                }
+                                }
+                                </tbody> *@
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    var filterstr = "";
+    $(document).ready(function () {
+        GetDesignationMasterList(filterstr);
+    });
+
+    function GetDesignationMasterList(filterstr) {
+        var ajaxurl = '@Url.Action("GetDesignationMasterList", "DesignationMaster")?filterdata=' + filterstr + '';
+        var table = $('#tblDesignationMaster');
+        table.DataTable({
+            "processing": true,
+            "serverSide": true,
+            "filter": true,
+            "ajax": {
+                "url": ajaxurl,
+                "type": "POST",
+            },
+            "columns": [
+                { "data": "id", "name": "Id", "sTitle": "Id" },
+                { "data": null, "sTitle": "Action" },
+                { "data": "designation", "name": "Designation", "sTitle": "Designation" },
+                { "data": "level", "name": "Level", "sTitle": "Level" },
+                { "data": "isActive", "name": "IsActive", "sTitle": "Is Active" },
+            ],
+            "fnRowCallback": function (nRow, aaData) {
+                $(nRow).find("td:eq(0)").html(getActionButtonHtml(aaData.id));
+
+                if (aaData.isActive == true) {
+                    var Inactive = '<a href="/DesignationMaster/Delete?id=' + aaData.id + '&isActive=false" class="btn btn-success float-right mb-2 btn-sm" id="Active">Active</a>';
+                    $('td:eq(3)', nRow).html(Inactive);
+                } else {
+                    var Active = '<a href="/DesignationMaster/Delete?id=' + aaData.id + '&isActive=true"  class="btn btn-primary float-right mb-2 btn-sm" id="Inactive">InActive</a>';
+                    $('td:eq(3)', nRow).html(Active);
+                }
+            },
+            "columnDefs": [{
+                "targets": [0],
+                "visible": false,
+                "searchable": false,
+                "orderable": false,
+            }],
+        });
+    }
+
+    function getActionButtonHtml(id) {
+        var data = '<a href="/DesignationMaster/Manage?id=' + id + '" class="btn btn-primary btn-sm mb-1" data-toggle="tooltip" data-placement="right" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>';
+        return data;
+    }
+
+
+    $(function () {
+            $(document).undelegate('#Active', "click").delegate("#Active", "click", function () {
+
+                if (!confirm("Are you sure want to InActive Designation?")) {
+                    return false;
+                }
+            });
+
+            $(document).undelegate('#Inactive', "click").delegate("#Inactive", "click", function () {
+
+                if (!confirm("Are you sure want to Active Designation?")) {
+                    return false;
+                }
+            });
+        });
+
+</script>
